@@ -345,13 +345,12 @@ shinyServer(function(input, output, session){
       d <- d %>% filter_(filter_criteria) %>% collect()
     }
     
-    if ( ft == 'comparendos') {
+  
       if (nrow(d) >= 2000) {
         d <- d[1:2000,]
       } else {
         d <- d
-      }
-  }
+}
     d
   })
   
