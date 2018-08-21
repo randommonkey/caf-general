@@ -1,0 +1,29 @@
+
+shinyUI(
+  fluidPage(
+    useShinyjs(),
+    conditionalPanel(condition="$('html').hasClass('shiny-busy')",
+                     tags$img(src = 'Cargando.gif', class="loadmessage")),
+    tags$head(
+      tags$link(rel="stylesheet", type="text/css", href="style.css"),
+      includeScript("js/iframeSizer.contentWindow.min.js"),
+      includeScript("js/caf.js")
+    ),
+    HTML('<h5 style="margin-left:3%;font-weight: 600;">En esta sección puede consultar 
+         información de Bogotá que describe la situación de la ciudad en cuanto a 
+         transporte público, seguridad vial, ordenamiento territorial, entre otros.</h2>'),
+    div(class = 'selecGen',
+        uiOutput('botGeneral'),
+        uiOutput('selectorMapas')),
+    div(class = 'vizPar',
+        div(class = 'conTemp',
+            uiOutput('amoave')
+        ),
+        div(class = 'clasLfoP',
+            #uiOutput('contMap'),
+            uiOutput('mapLeaf'),
+            uiOutput('textoCreditos')
+        )
+    )
+  )
+)
