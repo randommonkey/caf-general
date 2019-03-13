@@ -160,3 +160,77 @@ remote: Resolving deltas:   0% (0/11)   [Kremote: Resolving deltas:   9% (1/11
 To https://github.com/randommonkey/caf-general.git
    e7a608b..ee12183  master -> master
 ]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git add .
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git commit -m "Localidades bogotá" [A
+[master cb6cf0f] Localidades bogotá
+ 5 files changed, 63 insertions(+), 8 deletions(-)
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': CamilaAchury
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://CamilaAchury@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/randommonkey/caf-general.git/'
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git pushcommit -m "Localidades bogotá" [A
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+	[31mmodified:   .Rproj.user/B5503C46/console06/EEA69BCA[m
+
+no changes added to commit
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git commit -m "Localidades bogotá" [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpush[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': CamilaAchury
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://CamilaAchury@github.com': 
+Counting objects: 12, done.
+Compressing objects:   8% (1/12)   Compressing objects:  16% (2/12)   Compressing objects:  25% (3/12)   Compressing objects:  33% (4/12)   Compressing objects:  41% (5/12)   Compressing objects:  50% (6/12)   Compressing objects:  58% (7/12)   Compressing objects:  66% (8/12)   Compressing objects:  75% (9/12)   Compressing objects:  83% (10/12)   Compressing objects:  91% (11/12)   Compressing objects: 100% (12/12)   Compressing objects: 100% (12/12), done.
+Writing objects:   8% (1/12)   Writing objects:  16% (2/12)   Writing objects:  25% (3/12)   Writing objects:  33% (4/12)   Writing objects:  41% (5/12)   Writing objects:  50% (6/12)   Writing objects:  58% (7/12)   Writing objects:  66% (8/12)   Writing objects:  75% (9/12)   Writing objects:  83% (10/12)   Writing objects:  91% (11/12)   Writing objects: 100% (12/12)   Writing objects: 100% (12/12), 1.66 KiB | 0 bytes/s, done.
+Total 12 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/7)   [Kremote: Resolving deltas:  14% (1/7)   [Kremote: Resolving deltas:  28% (2/7)   [Kremote: Resolving deltas:  42% (3/7)   [Kremote: Resolving deltas:  57% (4/7)   [Kremote: Resolving deltas:  71% (5/7)   [Kremote: Resolving deltas:  85% (6/7)   [Kremote: Resolving deltas: 100% (7/7)   [Kremote: Resolving deltas: 100% (7/7), completed with 7 local objects.[K
+To https://github.com/randommonkey/caf-general.git
+   ee12183..cb6cf0f  master -> master
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ [K]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git add .[K[K[K[K[K[K[K[K[Kgit add .

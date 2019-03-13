@@ -641,10 +641,9 @@ shinyServer(function(input, output, session){
       idBut <- typeFile()
       bGen <- dicSelct %>% filter(id_bot ==  idBut)
       tyFile <- unique(bGen$lectura)
-
+      dir.create(tmp <- tempfile())
       if (tyFile == 'csv') {
-        dir.create(tmp <- tempfile())
-        df <- baseImport()
+        df <- baseImport() %>% collect()
         dic <- data.frame(id = names(baseImport()), label = names(baseImport()))
         write_csv(df, file.path(tmp, "data_all.csv"), na = '')
         write_csv(dic, file.path(tmp, "dic_all.csv"), na = '')
