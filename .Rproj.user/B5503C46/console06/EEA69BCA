@@ -119,3 +119,44 @@ error: cannot run rpostback-askpass: No such file or directory
 Password for 'https://CamilaAchury@github.com': 
 Everything up-to-date
 ]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ [K]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git push[K[K[K[Kadd .
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git commit- [K[K m [K[K[K-m[K[K -m "localidad ortografí a"
+[master ee12183] localidad ortografía
+ 23 files changed, 237 insertions(+), 157 deletions(-)
+ rewrite .Rproj.user/B5503C46/console06/INDEX001 (100%)
+ delete mode 100644 .Rproj.user/B5503C46/sources/s-a68dda93/96051057
+ delete mode 100644 .Rproj.user/B5503C46/sources/s-a68dda93/D64A0FD2
+ delete mode 100644 .Rproj.user/B5503C46/sources/s-a68dda93/D71FD65C
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': CamilaAchury
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://CamilaAchury@github.com': 
+Counting objects: 26, done.
+Compressing objects:   4% (1/24)   Compressing objects:   8% (2/24)   Compressing objects:  12% (3/24)   Compressing objects:  16% (4/24)   Compressing objects:  20% (5/24)   Compressing objects:  25% (6/24)   Compressing objects:  29% (7/24)   Compressing objects:  33% (8/24)   Compressing objects:  37% (9/24)   Compressing objects:  41% (10/24)   Compressing objects:  45% (11/24)   Compressing objects:  50% (12/24)   Compressing objects:  54% (13/24)   Compressing objects:  58% (14/24)   Compressing objects:  62% (15/24)   Compressing objects:  66% (16/24)   Compressing objects:  70% (17/24)   Compressing objects:  75% (18/24)   Compressing objects:  79% (19/24)   Compressing objects:  83% (20/24)   Compressing objects:  87% (21/24)   Compressing objects:  91% (22/24)   Compressing objects:  95% (23/24)   Compressing objects: 100% (24/24)   Compressing objects: 100% (24/24), done.
+Writing objects:   3% (1/26)   Writing objects:   7% (2/26)   Writing objects:  11% (3/26)   Writing objects:  15% (4/26)   Writing objects:  19% (5/26)   Writing objects:  23% (6/26)   Writing objects:  26% (7/26)   Writing objects:  30% (8/26)   Writing objects:  34% (9/26)   Writing objects:  38% (10/26)   Writing objects:  42% (11/26)   Writing objects:  46% (12/26)   Writing objects:  50% (13/26)   Writing objects:  53% (14/26)   Writing objects:  57% (15/26)   Writing objects:  61% (16/26)   Writing objects:  65% (17/26)   Writing objects:  69% (18/26)   Writing objects:  73% (19/26)   Writing objects:  76% (20/26)   Writing objects:  80% (21/26)   Writing objects:  84% (22/26)   Writing objects:  88% (23/26)   Writing objects:  92% (24/26)   Writing objects:  96% (25/26)   Writing objects: 100% (26/26)   Writing objects: 100% (26/26), 5.38 KiB | 0 bytes/s, done.
+Total 26 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/11)   [Kremote: Resolving deltas:   9% (1/11)   [Kremote: Resolving deltas:  18% (2/11)   [Kremote: Resolving deltas:  27% (3/11)   [Kremote: Resolving deltas:  36% (4/11)   [Kremote: Resolving deltas:  45% (5/11)   [Kremote: Resolving deltas:  54% (6/11)   [Kremote: Resolving deltas:  63% (7/11)   [Kremote: Resolving deltas:  72% (8/11)   [Kremote: Resolving deltas:  81% (9/11)   [Kremote: Resolving deltas:  90% (10/11)   [Kremote: Resolving deltas: 100% (11/11)   [Kremote: Resolving deltas: 100% (11/11), completed with 11 local objects.[K
+To https://github.com/randommonkey/caf-general.git
+   e7a608b..ee12183  master -> master
+]0;/home/randommonkey/shiny-apps/caf-general]0;randommonkey@ip-172-31-34-190: ~/shiny-apps/caf-general[01;32mrandommonkey@ip-172-31-34-190[00m:[01;34m~/shiny-apps/caf-general[00m$ git add .

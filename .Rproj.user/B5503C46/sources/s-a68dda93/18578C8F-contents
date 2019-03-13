@@ -369,7 +369,14 @@ shinyServer(function(input, output, session){
         d <- d[1:2000,]
       } else {
         d <- d
-}
+      }
+    
+    if (ft == "comparendos") {
+      loc <- read_csv("data/aux_localidades_ortografia.csv")
+      d <- d %>% left_join(loc) %>% select(-localidad)
+      d <- d %>% select(localidad = nameLoc, everything())
+    }
+    
     d
   })
   
