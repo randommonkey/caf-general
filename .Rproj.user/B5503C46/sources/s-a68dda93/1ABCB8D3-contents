@@ -17,8 +17,6 @@ shinyUI(
         uiOutput('selectorMapas')),
     div(class = 'vizPar',
         div(class = 'conTemp',
-            verbatimTextOutput("blabla"),
-            # dataTableOutput("tabGeneral")
             uiOutput('amoave')
         ),
         div(class = 'clasLfoP',

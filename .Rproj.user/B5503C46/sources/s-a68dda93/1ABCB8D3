@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "972440881",
     "id" : "1ABCB8D3",
-    "lastKnownWriteTime" : 1552434904,
-    "last_content_update" : 1552434904356,
+    "lastKnownWriteTime" : 1552492920,
+    "last_content_update" : 1552492920136,
     "path" : "~/shiny-apps/caf-general/ui.R",
     "project_path" : "ui.R",
     "properties" : {
-        "cursorPosition" : "25,12",
-        "scrollLine" : "17"
+        "cursorPosition" : "18,30",
+        "scrollLine" : "11"
     },
     "relative_order" : 5,
     "source_on_save" : false,

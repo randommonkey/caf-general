@@ -65,7 +65,7 @@ shinyServer(function(input, output, session){
     
     bGen <- dicSelct %>% filter(id_bot ==  idBut)
     
-    idBase <- input$varElg
+    idBase <- input$varElg #localidad
     base <- unique(bGen$baseEnd[bGen$base == idBase])
     if(identical(base, character(0))) {
       base <- unique(bGen$baseEnd)
@@ -81,9 +81,12 @@ shinyServer(function(input, output, session){
     } else {
       topoFile <- geojson_read(paste0('data/mapas/', base, '.json'), what = 'sp')
     }
+
     topoFile
     
-  })
+  }) 
+  
+
   
   output$tiempoV <- renderUI({
 
@@ -94,11 +97,11 @@ shinyServer(function(input, output, session){
 
     if (ft == 'siniestros') selAnio <- c('2014', '2013', '2012', '2011', '2010')
     if (ft == 'comparendos') selAnio <- c('2015', '2014')
-    if (ft == 'torniqueteF1F2') selAnio <- as.character(gsub('hora', '', unique(data$HORA_INICIAL)))
-    if (ft == 'torniqueteF3') selAnio <-  unique(as.character(datf3$Hora))
+    #if (ft == 'torniqueteF1F2') selAnio <- as.character(gsub('hora', '', unique(data$HORA_INICIAL)))
+    #if (ft == 'torniqueteF3') selAnio <-  unique(as.character(datf3$Hora))
     
     
-    if (ft == 'siniestros' | ft == 'comparendos' | ft == 'torniqueteF1F2' | ft == 'torniqueteF3') {
+    if (ft == 'siniestros' | ft == 'comparendos' ) { #| ft == 'torniqueteF1F2' | ft == 'torniqueteF3') {
       selectizeInput('range', '' , selAnio) 
       } else {
       return()
@@ -115,9 +118,7 @@ shinyServer(function(input, output, session){
     v
   })
 
-  output$bla <- renderPrint({
-    baseHigh()
-  })
+
   
   baseHigh <- reactive({
 
@@ -164,8 +165,11 @@ shinyServer(function(input, output, session){
         d <- d %>% group_by(a, S) %>% summarise(count = sum(CANTIDAD, na.rm = TRUE))
         d <- d %>% filter(S == 'E') %>% collect()
         d <- d[,-2]#%>% collect()
-        d$a <- as.character(d$a) }
-      else {
+        d$a <- as.character(d$a) } else if (ft == "torniqueteF3"){
+        d <- d %>%  group_by(Año, Hora) %>% summarise(Entradas = sum(Entradas, na.rm = TRUE), Salidas = sum(Salidas, na.rm = TRUE)) 
+        d <- d %>% group_by(Año) %>% summarise(count = sum(Entradas)) %>% collect() %>% drop_na() %>% select(a = Año, everything())
+        d$a <- as.character(d$a)
+        } else {
       d <- d %>% select_('a' = varFile()) 
       d <- d %>% group_by_('a') %>% dplyr::summarise(count = n()) %>% collect()
       d <- d  %>% drop_na() #%>% collect()
@@ -175,12 +179,18 @@ shinyServer(function(input, output, session){
       d <- read_csv(paste0('data/tablas/',
                            gsub('.json|.csv', '', baseFind), '.csv'))#)#)#read_csv(paste0('data/tablas/', baseFind, '.csv'))
     }
+    
+    
+    if (ft == "comparendos") {
+      loc <- read_csv("data/aux_localidades_ortografia.csv")
+      d <- d %>% left_join(loc, by = c("a" = "localidad")) %>% select(-a)
+      d <- d %>% select(a = nameLoc, everything())
+    }
+    
     d
 
   })
-  # 
-  # 
-  # 
+  
   # 
   output$vizAv <- renderHighchart({
 
@@ -315,7 +325,9 @@ shinyServer(function(input, output, session){
     r
   })
 
+  
 
+  
   filteredData <- reactive({
 
     filtViz <- SelecFilt$ids
@@ -325,6 +337,13 @@ shinyServer(function(input, output, session){
     tyFile <- unique(bGen$lectura)
 
     d <- baseImport()
+    
+    if (ft == "comparendos") {
+      loc <- read_csv("data/aux_localidades_ortografia.csv")
+      locOrg <- loc %>% filter(nameLoc %in% filtViz)
+      filtViz <- as.character(locOrg$localidad)
+    } 
+    
     
     if (ft == 'torniqueteF1F2') {
       z <- paste0(input$range, 'hora')
@@ -532,13 +551,17 @@ shinyServer(function(input, output, session){
   
   output$mapTroncalF1F2 <- renderLeaflet({
     
+    anio <- SelecFilt$ids
+    if (is.null(anio)) anio <- c("2013", "2014", "2015")
+    
     dataPoints <- read_csv('data/codes_stat.csv')
-    res <- filteredData() %>% 
+    res <-  baseImport() %>% filter(Año %in% anio) %>%
       group_by(`NOMBRE ESTACION`, S) %>% 
-      dplyr::summarise(total = sum(CANTIDAD))
+      dplyr::summarise(total = sum(CANTIDAD)) %>% collect()
+    
     res <- res %>% 
       spread(S, total) %>%
-      select(id = `NOMBRE ESTACION`, everything())
+      select(id = `NOMBRE ESTACION`, everything()) 
     
     res <- res %>% left_join(dataPoints)  %>% drop_na(id) 
     res <- res %>% plyr::rename(c('E' = 'Entradas', 
@@ -559,14 +582,17 @@ shinyServer(function(input, output, session){
   output$mapTroncalF3 <- renderLeaflet({
     
     ft <- typeFile()
-    res <- filteredData() 
+    res <-  baseImport() 
+    anio <- SelecFilt$ids
+    if (is.null(anio)) anio <- c("2013", "2014", "2015")
     
       dataPoints <- read_csv('data/codes_stat_fas3.csv')
-      res <- filteredData() %>%
-        select(id = Estacion, everything())
+      res <- res %>%
+      select(id = Estacion, everything()) %>% filter(Año %in% anio) %>% collect()
       res$id <- toupper(res$id)
       res <- res %>% group_by(id) %>% summarise(Entradas = sum(Entradas), Salidas = sum(Salidas))
       res <- res %>% left_join(dataPoints) 
+      res <- res %>% drop_na(lon)
       
     leaflet(data = res) %>%
       addProviderTiles(providers$Wikimedia) %>%

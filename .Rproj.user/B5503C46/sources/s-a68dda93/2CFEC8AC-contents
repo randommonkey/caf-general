@@ -6,6 +6,19 @@ A$hora <- paste0(A$HORA_INICIAL, 'hora')
 write_csv(A, "data/aux_troncalesF2F3.csv")
 
 B <-  read_csv("data/tablas/res_FASE3_data.csv")
-B <- B %>% group_by(Año, Hora) %>% summarise(Entradas = sum(Entradas, na.rm = TRUE), Salidas = sum(Salidas, na.rm = TRUE))
+B <- B %>%
 B$Año[is.na(B$Año)] <- 'N.A'
 write_csv(B, "data/aux_troncalesF3.csv")
+
+
+
+com <- topoFile %>% collect()
+loc <- data.frame(localidad = unique(com$localidad), nameLoc = unique(com$localidad))
+loc$nameLoc <- stringi::stri_trans_totitle(tolower(loc$nameLoc))
+loc$nameLoc <- gsub("ã‘", "ñ", loc$nameLoc)
+loc$nameLoc <- gsub("Engativa", "Engativá", loc$nameLoc)
+loc$nameLoc <- gsub("Martires", "Mártires", loc$nameLoc)
+loc$nameLoc <- gsub("Fontibon", "Fontibón", loc$nameLoc)
+loc$nameLoc <- gsub("Usaquen", "Usaquén", loc$nameLoc)
+loc$nameLoc <- gsub("San Cristóbal", "San Cristóbal", loc$nameLoc)
+write_csv(loc, "data/aux_localidades_ortografia.csv")

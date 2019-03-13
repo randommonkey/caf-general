@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "18578C8F",
-    "lastKnownWriteTime" : 1552435227,
-    "last_content_update" : 1552435227187,
+    "lastKnownWriteTime" : 1552492923,
+    "last_content_update" : 1552492923271,
     "path" : "~/shiny-apps/caf-general/server.R",
     "project_path" : "server.R",
     "properties" : {
-        "cursorPosition" : "590,71",
-        "scrollLine" : "585"
+        "cursorPosition" : "328,0",
+        "scrollLine" : "324"
     },
     "relative_order" : 1,
     "source_on_save" : false,
