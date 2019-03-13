@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1552347549200.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EFAA6B8F",
+    "lastKnownWriteTime" : 1549413428,
+    "last_content_update" : 1549413428,
+    "path" : "~/shiny-apps/caf-general/global.R",
+    "project_path" : "global.R",
+    "properties" : {
+        "cursorPosition" : "59,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

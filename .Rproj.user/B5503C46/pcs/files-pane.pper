@@ -1,0 +1,9 @@
+{
+    "path" : "~/shiny-apps/caf-general",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

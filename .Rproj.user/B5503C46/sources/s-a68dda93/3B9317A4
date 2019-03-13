@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1552347435754.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "3B9317A4",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1552347435754,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "72607E6",
+        "caption" : "dataPoints",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=dataPoints&cache_key=72607E6",
+        "displayedObservations" : 85,
+        "environment" : "",
+        "object" : "dataPoints",
+        "preview" : 0,
+        "totalObservations" : 85,
+        "variables" : 4
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
