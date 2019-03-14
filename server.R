@@ -259,6 +259,16 @@ shinyServer(function(input, output, session){
           menuItems = list('printChart', 'downloadJPEG', 'downloadPNG', 'downloadSVG', 'downloadPDF')
         )
       ))
+    
+    
+    ft <- typeFile()
+    if (ft == 'torniqueteF1F2' | ft == 'torniqueteF3') {
+      h <- h %>% hc_subtitle(text = "Suma del número de entradas por torniquete durante las horas de servicio de la troncal",
+                             align= 'left')
+    } else {
+      h <- h
+    }
+    h
 
   })
   # 
